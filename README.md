@@ -1,4 +1,4 @@
-# Hi there 👋, I'm Ibrahim Hussain
+# I'm Ibrahim Hussain
 
 🎓 Data Science student at FAST NUCES, Islamabad  
 💻 Passionate about exploring various programming languages  
