@@ -1,16 +1,15 @@
-## Hi there 👋
+# Hi there 👋, I'm Ibrahim Hussain
 
-<!--
-**ib-hussain/ib-hussain** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+🎓 Data Science student at FAST NUCES, Islamabad  
+💻 Passionate about exploring various programming languages  
+📫 Reach me at ibrahimbeaconarion@gmail.com  
+🔗 Connect with me on [LinkedIn](https://www.linkedin.com/in/ibrahim-hussain-1084ba255)
 
-Here are some ideas to get you started:
+## 🛠️ Skills
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- Programming Languages: Python, C++
+- Areas of Interest: Data Analysis, Machine Learning, Web Development
+
+## 📈 GitHub Stats
+
+![Ibrahim's GitHub stats](https://github-readme-stats.vercel.app/api?username=ib-hussain&show_icons=true&theme=radical)
