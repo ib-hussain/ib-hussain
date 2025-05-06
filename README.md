@@ -3,8 +3,8 @@
 🎓 Data Science student at FAST NUCES, Islamabad  
 💻 Passionate about exploring various programming languages  
 📫 Reach me at ibrahimbeaconarion@gmail.com  
-🔗 Connect with me on [LinkedIn](https://www.linkedin.com/in/ibrahim-hussain-1084ba255) 
-📄 <a href="./Ibrahim's Resume.pdf" target="_blank"><br></br>View My Resume</a>
+🔗 Connect with me on [LinkedIn](https://www.linkedin.com/in/ibrahim-hussain-1084ba255) <br>
+📄 <a href="./Ibrahim's Resume.pdf" target="_blank">View My Resume</a>
 
 ## 🛠️ Skills
 
