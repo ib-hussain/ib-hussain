@@ -4,7 +4,7 @@
 💻 Passionate about exploring various programming languages  
 📫 Reach me at ibrahimbeaconarion@gmail.com  
 🔗 Connect with me on [LinkedIn](https://www.linkedin.com/in/ibrahim-hussain-1084ba255) <br>
-📄 <a href="./Ibrahim's Resume.pdf" target="_blank">View My Resume</a>
+📄 <a href="./Ibrahim's Resume1.pdf" target="_blank">View My Resume</a>
 
 ## 🛠️ Skills
 
