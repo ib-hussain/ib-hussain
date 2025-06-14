@@ -9,7 +9,7 @@
 ## 🛠️ Skills
 
 - Programming Languages: Python, C++
-- Areas of Interest: Data Analysis, Machine Learning, Web Development
+- Areas of Interest: Data Analysis, NLP, Web Development
 
 ## 📈 GitHub Stats
 
