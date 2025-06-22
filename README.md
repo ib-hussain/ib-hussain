@@ -1,12 +1,8 @@
 <h1 align="center">I'm Ibrahim Hussain</h1>
 
-<p >
-  <strong>Data Science student at FAST NUCES, Islamabad</strong><br>
-  Passionate about exploring various programming languages<br>
-  📫 Reach me at <a href="mailto:ibrahimbeaconarion@gmail.com">ibrahimbeaconarion@gmail.com</a><br>
-  🔗 <a href="https://www.linkedin.com/in/ibrahim-hussain-1084ba255">LinkedIn</a> • 
-  <a href="./Ibrahim's Resume.pdf" target="_blank">View My Resume</a>
-</p>
+  💻 A student passionate about exploring various programming languages  
+📫 Reach me at ibrahimbeaconarion@gmail.com  
+🔗 Connect with me on [LinkedIn](https://www.linkedin.com/in/ibrahim-hussain-1084ba255) <br>
 
 ---
 
