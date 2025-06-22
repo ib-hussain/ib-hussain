@@ -8,9 +8,31 @@
 
 ## 🛠️ Skills
 
-- Programming Languages: Python, C++
+- Programming Languages: Python, C++, JS, HTML, CSS
 - Areas of Interest: Data Analysis, NLP, Web Development
 
-## 📈 GitHub Stats
+### 📊 GitHub Stats
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=ib-hussain&show_icons=true&theme=tokyonight" alt="GitHub Stats" /><br>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ib-hussain&layout=compact&theme=tokyonight" alt="Top Languages" />
+</p>
 
-![Ibrahim's GitHub stats](https://github-readme-stats.vercel.app/api?username=ib-hussain&show_icons=true&theme=radical)
+
+### 🛠️ Languages and Tools
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/C++-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white"/>
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"/>
+  
+</p>
+<p align="center">
+  <img src="https://profile-counter.glitch.me/ib-hussain/count.svg" />
+</p>
+
+| ![Python](https://img.icons8.com/color/48/000000/python.png) | ![C++](https://img.icons8.com/color/48/000000/c-plus-plus-logo.png) | ![Pandas](https://img.icons8.com/ios-filled/50/000000/pandas.png) |
+|:--:|:--:|:--:|
+| Python | C++ | Pandas |
+
