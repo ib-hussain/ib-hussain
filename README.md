@@ -31,12 +31,12 @@
 
 ---
 
-## 📈 Contribution Graph
+<!-- ## 📈 Contribution Graph -->
 
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ib-hussain&theme=github-compact" alt="GitHub Contribution Graph" />
-</p>
----
+<!-- <p align="center"> -->
+<!--   <img src="https://github-readme-activity-graph.vercel.app/graph?username=ib-hussain&theme=github-compact" alt="GitHub Contribution Graph" /> -->
+<!-- </p> -->
+<!-- --- -->
 
 <p align="center">
   <img src="https://profile-counter.glitch.me/ib-hussain/count.svg" />
