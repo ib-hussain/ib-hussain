@@ -38,6 +38,3 @@
 <!-- </p> -->
 <!-- --- -->
 
-<p align="center">
-  <img src="https://profile-counter.glitch.me/ib-hussain/count.svg" />
-</p>
