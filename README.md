@@ -26,7 +26,12 @@
 ## 🔧 My Tools
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,cpp,flask,js,html,css,github,git,vscode,latex" />
+  <img src="https://skillicons.dev/icons?i=python,cpp,flask,js,html,css,github,git,vscode,latex,linux,tensorflow,sqlite,postgres" />
+  <br/>
+  <img src="https://skillicons.dev/icons?i=streamlit" />
+  <img src="https://img.shields.io/badge/Pinecone-339933?style=for-the-badge&logo=pinecone&logoColor=white" />
+  <img src="https://img.shields.io/badge/LangChain-000000?style=for-the-badge&logo=langchain&logoColor=white" />
+  <img src="https://img.shields.io/badge/HuggingFace-FFD21F?style=for-the-badge&logo=huggingface&logoColor=black" />
 </p>
 
 ---
