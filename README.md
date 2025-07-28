@@ -10,7 +10,7 @@
 
 - <strong>Relevant Coursework:</strong> Data Analysis and NLP, Data Structures, Databases, Introduction to Data Science, Software Engineering, Advanced Statistics, Linear Algebra
 - <strong>Programming Languages:</strong> Python, C++, JavaScript, HTML, CSS, LaTeX
-- <strong>AI:</strong> NLP, Hugging Face Transformers, LangChain, Agentic AI.
+- <strong>AI:</strong> NLP, Hugging Face, LangChain, Agentic AI.
 - <strong>Databases:</strong> PostgreSQL, SQLite, Vector Databases (Pinecone)
 - <strong>Operating Systems:</strong> Windows, Linux(Arch, Mint, Ubuntu)
 - <strong>Areas of Interest:</strong> Tech Leadership, Data Analysis, NLP, Team Collaboration, Analytics Enthusiast, Web Development, UI/UX Design, Digital Marketing, Graphic Design, Video Editing, Game Development
