@@ -3,6 +3,7 @@
   💻 A student passionate about exploring various programming languages  
 📫 Reach me at ibrahimbeaconarion@gmail.com  
 🔗 Connect with me on [LinkedIn](https://www.linkedin.com/in/ibrahim-hussain-1084ba255) <br>
+📄 View my [Resume](https://github.com/ib-hussain/ib-hussain/blob/main/Ibrahim's%20Resume.pdf)
 
 ---
 
