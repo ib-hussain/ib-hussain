@@ -1,4 +1,4 @@
-<h1 align="center">I'm Ibrahim Hussain</h1>
+<h1 align="center">Ibrahim Hussain</h1>
 
   💻 A student passionate about exploring various programming languages  
 📫 Reach me at ibrahimbeaconarion@gmail.com  
