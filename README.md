@@ -24,7 +24,7 @@ Development, Graphic Design, Video Editing, Web Development, UI/UX Design, Game 
 ## My Tools
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,cpp,flask,js,git,vscode,latex,linux,sqlite,postgres" />
+  <img style="align:center" src="https://skillicons.dev/icons?i=python,cpp,r,ubuntu,mint,arch,linux,tensorflow,visualstudio,vscode,js,git,mysql,postgres" />
   <!-- <img src="pictures/pinecone1.png" alt="Pinecone" width="40" height="40" />
   <img src="pictures/langchain1.png" alt="LangChain" width="40" height="40" />
   <img src="pictures/streamlit1.png" alt="LangChain" width="40" height="40" />
