@@ -1,5 +1,6 @@
 <h1 align="center">Ibrahim Hussain</h1>
-<p align="center">A student passionate about exploring various programming languages  </p>
+<p align="center"><b>Quantitative Data Scientist | Systems Modelling | Risk & Decision Analytics</b><br>
+I’m a quantitative data science student focused on modelling complex systems. Most of my work involves extracting structural patterns from large, messy datasets — whether that’s macroeconomic forecasting, disaster resilience modelling, or AI-driven systems. I’m particularly interested in applying rigorous statistical methods to high-impact domains like finance, healthcare, and strategic analytics.</p>
 <!-- 
 #### Reach me at ibrahimbeaconarion@gmail.com  
 #### Connect with me on [LinkedIn](https://www.linkedin.com/in/ibrahim-hussain-1084ba255) 
@@ -8,14 +9,14 @@
 <!-- ## Skills -->
 <h2 align="center">Skills</h2>
 
-- <strong>Relevant Coursework:</strong> Data Analysis and NLP, Data Structures, Databases, Data Science, Software 
-Engineering, Operating Systems, Advanced Statistics, Linear Algebra, DevOps.
-- <strong>Programming Languages:</strong>  Python, C++, R, x86 Assembly, JavaScript, HTML, CSS, LaTeX.
-- <strong>AI:</strong> NLP, Hugging Face Transformers, LangChain, LangGraph, LangSmith, Agentic AI.
-- <strong>Databases:</strong> PostgreSQL, SQLite, MySQL, Vector Databases (Pinecone).
-- <strong>Operating Systems:</strong> Windows, Linux(Arch, Mint, Ubuntu)
-- <strong>Areas of Interest:</strong>  Tech Leadership, Analytical Marketing, Digital Marketing, Full-Stack 
-Development. 
+- <strong>Relevant Coursework:</strong> Machine Learning, Deep Learning, Data Mining, Big Data Systems, Database Systems & Warehousing, Advanced Statistics, Operating Systems, Software Engineering.
+- <strong>Programming Languages:</strong> Python (Pandas, NumPy, Scikit-learn, Flask), R, C++, SQL (PostgreSQL, MySQL, SQLite), x86 Assembly.
+- <strong>Statistical & Quantitative Modelling:</strong> Time-Series Forecasting (ARIMA), Regularised Regression (Ridge, Lasso, Elastic Net), Hypothesis Testing, Feature Engineering, Model Diagnostics, Econometric Analysis.
+- <strong>Machine Learning & AI:</strong> Supervised Learning, Multi-label Classification, Deep Learning (CNNs, RNNs), NLP, Hugging Face Transformers, RAG Systems, LangChain, LangGraph
+- <strong>Data Engineering & Big Data:</strong> Data Cleaning, Missing Data Imputation, Outlier Detection, Multi-source Data Fusion, Vector Databases (Pinecone), PostgreSQL.
+- <strong>Visualisation & Analytics:</strong> High-Dimensional Visual Analytics, Parallel Coordinates, Choropleths, Correlation & Density Analysis.
+- <strong>Systems & Tools:</strong> Git, GitHub, Linux(Arch, Mint, Ubuntu), Windows, REST APIs.
+- <strong>Interests:</strong>  Quantitative Systems Thinking, Economic Modelling, Tech Leadership, Digital Marketing Analytics.
 - <strong>Languages:</strong> English (Fluent), Urdu (Native), Italian (Basic)
 
 
