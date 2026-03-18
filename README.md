@@ -11,11 +11,11 @@ I’m a quantitative data science student focused on modelling complex systems. 
 
 - <strong>Relevant Coursework:</strong> Machine Learning, Deep Learning, Data Mining, Big Data Systems, Database Systems & Warehousing, Advanced Statistics, Operating Systems, Software Engineering.
 - <strong>Programming Languages:</strong> Python (Pandas, NumPy, Scikit-learn, Flask), R, C++, SQL (PostgreSQL, MySQL, SQLite), x86 Assembly.
-- <strong>Statistical & Quantitative Modelling:</strong> Time-Series Forecasting (ARIMA), Regularised Regression (Ridge, Lasso, Elastic Net), Hypothesis Testing, Feature Engineering, Model Diagnostics, Econometric Analysis.
+- <strong>Statistical & Quantitative Modelling:</strong> Time-Series Forecasting, Hypothesis Testing, Feature Engineering, Model Diagnostics, Econometric Analysis.
 - <strong>Machine Learning & AI:</strong> Supervised Learning, Multi-label Classification, Deep Learning (CNNs, RNNs), NLP, Hugging Face Transformers, RAG Systems, LangChain, LangGraph
 - <strong>Data Engineering & Big Data:</strong> Data Cleaning, Missing Data Imputation, Outlier Detection, Multi-source Data Fusion, Vector Databases (Pinecone), PostgreSQL.
 - <strong>Visualisation & Analytics:</strong> High-Dimensional Visual Analytics, Parallel Coordinates, Choropleths, Correlation & Density Analysis.
-- <strong>Systems & Tools:</strong> Git, GitHub, Linux(Arch, Mint, Ubuntu), Windows, REST APIs.
+- <strong>Systems & Tools:</strong> Git, GitHub, Linux(Arch, Mint, Ubuntu), Windows.
 - <strong>Interests:</strong>  Quantitative Systems Thinking, Economic Modelling, Tech Leadership, Digital Marketing Analytics.
 - <strong>Languages:</strong> English (Fluent), Urdu (Native), Italian (Basic)
 
