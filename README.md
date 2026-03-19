@@ -36,7 +36,7 @@ I’m a quantitative data science student focused on modelling complex systems. 
 <p align="center">
 Connect with me on <a style="text-decoration:none" href="https://www.linkedin.com/in/ibrahim-hussain-1084ba255" target="_blank">LinkedIn</a> <br>
 <!-- View my  -->
-<a style="text-decoration:none"  href="https://github.com/ib-hussain/ib-hussain/blob/main/Ibrahim's%20Resume.pdf"> My Resume</a><br>
+<a style="text-decoration:none"  href="https://github.com/ib-hussain/ib-hussain.github.io/blob/main/assets/Ibrahim's%20Resume.pdf"> My Resume</a><br>
 <a style="text-decoration:none"  href="mailto:ibrahimbeaconarion@gmail.com" target="_blank">ibrahimbeaconarion@gmail.com</a>  
 </p>
 <!-- ## 📈 Contribution Graph -->
