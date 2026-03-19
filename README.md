@@ -1,6 +1,6 @@
 <h1 align="center">Ibrahim Hussain</h1>
 <p align="center"><b>Quantitative Data Scientist | Systems Modelling | Risk & Decision Analytics</b><br>
-I’m a quantitative data science student focused on modelling complex systems. Most of my work involves extracting structural patterns from large, messy datasets — whether that’s macroeconomic forecasting, disaster resilience modelling, or AI-driven systems. I’m particularly interested in applying rigorous statistical methods to high-impact domains like finance, healthcare, and strategic analytics.</p>
+I’m a quantitative data science student focused on modelling complex systems. Most of my work involves extracting structural patterns from large, messy datasets — whether that’s macroeconomic forecasting, big data modelling, or AI-driven systems. I’m particularly interested in applying rigorous statistical methods to high-impact domains like finance, healthcare, and strategic analytics.</p>
 <!-- 
 #### Reach me at ibrahimbeaconarion@gmail.com  
 #### Connect with me on [LinkedIn](https://www.linkedin.com/in/ibrahim-hussain-1084ba255) 
