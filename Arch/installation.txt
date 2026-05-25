@@ -1,0 +1,201 @@
+#!/bin/bash
+
+# ============================================
+# ARCH LINUX INSTALLATION SCRIPT
+# Desktop: Enlightenment
+# Default: UEFI/GPT (BIOS/MBR alternatives commented)
+# ============================================
+
+# ---------- CONNECT TO NETWORK ----------
+iwctl
+station wlan0 get-networks
+station wlan0 connect "Ibrahim_36"
+exit
+ping -c 4 google.com
+
+# ---------- PARTITIONING ----------
+# === UEFI/GPT (Default) ===
+cfdisk /dev/sda
+# Create partitions:
+# /dev/sda1: EFI System Partition (512M-1G, type: EFI System)
+# /dev/sda2: Linux Swap (optional, 4-8G, type: Linux swap)
+# /dev/sda3: Linux Root (remaining space, type: Linux filesystem)
+
+# Format and mount (UEFI/GPT)
+mkfs.fat -F32 /dev/sda1          # EFI partition
+mkswap /dev/sda2                  # Swap
+swapon /dev/sda2
+mkfs.ext4 /dev/sda3              # Root
+mount /dev/sda3 /mnt
+mkdir -p /mnt/boot
+mount /dev/sda1 /mnt/boot
+
+# === BIOS/MBR Alternative (uncomment below, comment UEFI section above) ===
+# cfdisk /dev/sda
+# Create partitions (use DOS/MBR label):
+# /dev/sda1: Linux Swap (optional, 4-8G, type: Linux swap)
+# /dev/sda2: Linux Root (remaining space, type: Linux filesystem)
+# Mark /dev/sda2 as bootable
+#
+# mkfs.ext4 /dev/sda2              # Root
+# mkswap /dev/sda1                 # Swap
+# swapon /dev/sda1
+# mount /dev/sda2 /mnt
+
+# ---------- BASE SYSTEM ----------
+pacman -Sy archlinux-keyring && pacman -S reflector
+pacstrap /mnt base linux linux-firmware sudo nano git base-devel
+genfstab -U /mnt >> /mnt/etc/fstab
+
+# ---------- CHROOT ----------
+arch-chroot /mnt /bin/bash << 'EOF'
+
+# ---------- TIME & LOCALE ----------
+ln -sf /usr/share/zoneinfo/Pakistan/Karachi /etc/localtime
+hwclock --systohc
+echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+locale-gen
+echo "LANG=en_US.UTF-8" > /etc/locale.conf
+
+# ---------- HOSTNAME ----------
+echo "arch" > /etc/hostname
+cat >> /etc/hosts << HOSTS
+127.0.0.1   localhost
+::1         localhost
+127.0.1.1   arch.localdomain arch
+HOSTS
+
+# ---------- ROOT PASSWORD ----------
+echo "Set root password:"
+passwd
+
+# ---------- USER SETUP (Full Root Privileges) ----------
+useradd -m -G wheel ibrahim
+echo "Set password for ibrahim:"
+passwd ibrahim
+
+# Give ibrahim full root privileges (UID 0 equivalent behavior)
+# Method 1: Passwordless sudo with full access
+# echo "ibrahim ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers.d/ibrahim
+# chmod 440 /etc/sudoers.d/ibrahim
+
+# Method 2: Make ibrahim effectively root (uncomment if you want true root equivalence)
+# WARNING: This gives actual UID 0 to ibrahim, making it identical to root
+usermod -u 0 -o ibrahim
+groupmod -g 0 -o wheel
+
+# Give ibrahim ownership of everything root owns
+chown -R ibrahim:ibrahim /home/ibrahim
+
+# ---------- BOOTLOADER ----------
+# === UEFI/GPT ===
+pacman -S grub efibootmgr os-prober
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ArchLinux
+grub-mkconfig -o /boot/grub/grub.cfg
+
+# === BIOS/MBR Alternative (uncomment below, comment UEFI grub above) ===
+# pacman -S grub os-prober
+# grub-install --target=i386-pc /dev/sda
+# grub-mkconfig -o /boot/grub/grub.cfg
+
+# ---------- NETWORK ----------
+pacman -S networkmanager
+systemctl enable NetworkManager
+
+# ---------- ENLIGHTENMENT DESKTOP ----------
+pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot
+pacman -S enlightenment terminology efl
+# Terminology is Enlightenment's terminal, efl is the foundation library
+
+# ---------- DISPLAY MANAGER (LightDM works well with Enlightenment) ----------
+pacman -S lightdm lightdm-gtk-greeter
+systemctl enable lightdm
+
+# Create LightDM config for Enlightenment
+mkdir -p /etc/lightdm
+cat > /etc/lightdm/lightdm.conf << LIGHTDM
+[Seat:*]
+greeter-session=lightdm-gtk-greeter
+user-session=enlightenment
+LIGHTDM
+
+# ============================================
+# PYTHON 3.12.7 INSTALLATION OPTIONS
+# OPTION 1: INSTALL FROM SOURCE (minimal dependencies)
+# Dependencies: wget make gcc openssl zlib bzip2 libffi readline sqlite
+# ============================================
+# pacman -S --noconfirm wget make gcc openssl zlib bzip2 libffi readline sqlite
+# cd /tmp
+# wget https://www.python.org/ftp/python/3.12.7/Python-3.12.7.tar.xz
+# tar -xf Python-3.12.7.tar.xz
+# cd Python-3.12.7
+# ./configure --enable-optimizations --prefix=/usr/local/python3.12
+# make -j$(nproc)
+# make altinstall
+# # Create symlinks
+# ln -sf /usr/local/python3.12/bin/python3.12 /usr/local/bin/python3.12
+# ln -sf /usr/local/python3.12/bin/pip3.12 /usr/local/bin/pip3.12
+# # Add to PATH
+# echo 'export PATH="/usr/local/python3.12/bin:$PATH"' >> /etc/profile.d/python3.12.sh
+# chmod +x /etc/profile.d/python3.12.sh
+# # Cleanup
+# rm -rf /tmp/Python-3.12.7 /tmp/Python-3.12.7.tar.xz
+
+# ============================================
+# OPTION 2: INSTALL VIA PYENV (recommended for version management)
+# Dependencies: git make gcc openssl zlib bzip2 libffi readline sqlite tk
+# ============================================
+pacman -S --noconfirm git make gcc openssl zlib bzip2 libffi readline sqlite tk
+# Install pyenv for ibrahim user
+su - ibrahim -c 'git clone https://github.com/pyenv/pyenv.git ~/.pyenv'
+# Add pyenv to ibrahim's bashrc
+cat >> /home/ibrahim/.bashrc << 'PYENV'
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+PYENV
+# Add pyenv to system-wide profile (optional)
+cat >> /etc/profile.d/pyenv.sh << 'PYENVSYS'
+export PYENV_ROOT="/home/ibrahim/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+PYENVSYS
+chmod +x /etc/profile.d/pyenv.sh
+# Install Python 3.12.7 via pyenv
+su - ibrahim -c 'pyenv install 3.12.7'
+su - ibrahim -c 'pyenv global 3.12.7'
+
+# ============================================
+# OPTION 3: INSTALL FROM PYTHON.ORG SCRIPT (automated installer)
+# Dependencies: wget make gcc openssl zlib bzip2 libffi readline sqlite
+# ============================================
+# pacman -S --noconfirm wget make gcc openssl zlib bzip2 libffi readline sqlite
+# 
+# cd /tmp
+# wget https://www.python.org/ftp/python/3.12.7/Python-3.12.7.tar.xz
+# tar -xf Python-3.12.7.tar.xz
+# cd Python-3.12.7
+# ./configure --enable-optimizations --enable-shared --prefix=/usr/local/python3.12 \
+#     LDFLAGS="-Wl,-rpath /usr/local/python3.12/lib"
+# make -j$(nproc)
+# make altinstall
+# 
+# # Create symlinks and add to PATH (same as Option 1)
+# ln -sf /usr/local/python3.12/bin/python3.12 /usr/local/bin/python3.12
+# ln -sf /usr/local/python3.12/bin/pip3.12 /usr/local/bin/pip3.12
+# echo 'export PATH="/usr/local/python3.12/bin:$PATH"' >> /etc/profile.d/python3.12.sh
+# chmod +x /etc/profile.d/python3.12.sh
+# 
+# # Update library cache
+# echo "/usr/local/python3.12/lib" > /etc/ld.so.conf.d/python3.12.conf
+# ldconfig
+# 
+# # Cleanup
+# rm -rf /tmp/Python-3.12.7 /tmp/Python-3.12.7.tar.xz
+
+EOF
+
+# ---------- UNMOUNT & REBOOT ----------
+umount -R /mnt
+echo "Installation complete. Remove installation media and reboot."
+# reboot
