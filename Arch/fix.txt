@@ -1,0 +1,26 @@
+# Create the missing session file
+sudo mkdir -p /usr/share/xsessions
+sudo cat > /usr/share/xsessions/enlightenment.desktop << 'DESKTOP'
+[Desktop Entry]
+Name=Enlightenment
+Comment=Enlightenment Desktop Environment
+Exec=enlightenment_start
+Type=Application
+DesktopNames=Enlightenment
+DESKTOP
+
+# Create .xinitrc as fallback
+cat > ~/.xinitrc << 'XINITRC'
+#!/bin/bash
+exec enlightenment_start
+XINITRC
+chmod +x ~/.xinitrc
+
+# Fix /tmp permissions
+sudo chmod 1777 /tmp
+
+# Remove stale Xauthority
+rm -f ~/.Xauthority
+
+# Restart LightDM
+sudo systemctl restart lightdm
