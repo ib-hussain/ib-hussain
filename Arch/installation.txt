@@ -48,7 +48,7 @@ pacstrap /mnt base linux linux-firmware sudo nano git base-devel
 genfstab -U /mnt >> /mnt/etc/fstab
 
 # ---------- CHROOT ----------
-arch-chroot /mnt /bin/bash << 'EOF'
+arch-chroot /mnt 
 
 # ---------- TIME & LOCALE ----------
 ln -sf /usr/share/zoneinfo/Pakistan/Karachi /etc/localtime
@@ -59,11 +59,11 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
 # ---------- HOSTNAME ----------
 echo "arch" > /etc/hostname
-cat >> /etc/hosts << HOSTS
+cat >> /etc/hosts << EOF
 127.0.0.1   localhost
 ::1         localhost
 127.0.1.1   arch.localdomain arch
-HOSTS
+EOF
 
 # ---------- ROOT PASSWORD ----------
 echo "Set root password:"
@@ -76,13 +76,13 @@ passwd ibrahim
 
 # Give ibrahim full root privileges (UID 0 equivalent behavior)
 # Method 1: Passwordless sudo with full access
-# echo "ibrahim ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers.d/ibrahim
-# chmod 440 /etc/sudoers.d/ibrahim
+echo "ibrahim ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers.d/ibrahim
+chmod 440 /etc/sudoers.d/ibrahim
 
 # Method 2: Make ibrahim effectively root (uncomment if you want true root equivalence)
 # WARNING: This gives actual UID 0 to ibrahim, making it identical to root
-usermod -u 0 -o ibrahim
-groupmod -g 0 -o wheel
+#usermod -u 0 -o ibrahim
+#groupmod -g 0 -o wheel
 
 # Give ibrahim ownership of everything root owns
 chown -R ibrahim:ibrahim /home/ibrahim
@@ -91,11 +91,15 @@ chown -R ibrahim:ibrahim /home/ibrahim
 # === UEFI/GPT ===
 pacman -S grub efibootmgr os-prober
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ArchLinux
+nano /etc/default/grub
+# GRUB_BACKGROUND="/boot/grub/bg.png"
 grub-mkconfig -o /boot/grub/grub.cfg
 
 # === BIOS/MBR Alternative (uncomment below, comment UEFI grub above) ===
 # pacman -S grub os-prober
 # grub-install --target=i386-pc /dev/sda
+# nano /etc/default/grub
+# # GRUB_BACKGROUND="/boot/grub/bg.png"
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 # ---------- NETWORK ----------
@@ -113,11 +117,11 @@ systemctl enable lightdm
 
 # Create LightDM config for Enlightenment
 mkdir -p /etc/lightdm
-cat > /etc/lightdm/lightdm.conf << LIGHTDM
+cat > /etc/lightdm/lightdm.conf << EOF
 [Seat:*]
 greeter-session=lightdm-gtk-greeter
 user-session=enlightenment
-LIGHTDM
+EOF
 
 # ============================================
 # PYTHON 3.12.7 INSTALLATION OPTIONS
@@ -193,9 +197,9 @@ su - ibrahim -c 'pyenv global 3.12.7'
 # # Cleanup
 # rm -rf /tmp/Python-3.12.7 /tmp/Python-3.12.7.tar.xz
 
-EOF
+exit
 
 # ---------- UNMOUNT & REBOOT ----------
 umount -R /mnt
 echo "Installation complete. Remove installation media and reboot."
-# reboot
+reboot
