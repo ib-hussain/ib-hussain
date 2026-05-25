@@ -106,82 +106,9 @@ grub-mkconfig -o /boot/grub/grub.cfg
 pacman -S networkmanager
 systemctl enable NetworkManager
 
-# ---------- ENLIGHTENMENT DESKTOP ----------
-pacman -S xorg-server xorg-xinit xorg-xrandr xorg-xsetroot
-pacman -S enlightenment terminology efl
-# Terminology is Enlightenment's terminal, efl is the foundation library
-
-# ---------- DISPLAY MANAGER (LightDM works well with Enlightenment) ----------
-pacman -S lightdm lightdm-gtk-greeter
-
-# Create Enlightenment session file for LightDM
-mkdir -p /usr/share/xsessions
-cat > /usr/share/xsessions/enlightenment.desktop << 'EOF'
-[Desktop Entry]
-Name=Enlightenment
-Comment=Enlightenment Desktop Environment
-Exec=enlightenment_start
-Type=Application
-DesktopNames=Enlightenment
-EOF
-
-# Create LightDM config directory
-mkdir -p /etc/lightdm
-
-# Configure LightDM for Enlightenment
-cat > /etc/lightdm/lightdm.conf << EOF
-[LightDM]
-minimum-display-number=0
-user-authority-in-system-dir=false
-
-[Seat:*]
-greeter-session=lightdm-gtk-greeter
-user-session=enlightenment
-greeter-hide-users=false
-allow-guest=false
-
-[XDMCPServer]
-enabled=false
-
-[VNCServer]
-enabled=false
-EOF
-
-# Configure LightDM GTK Greeter appearance
-cat > /etc/lightdm/lightdm-gtk-greeter.conf << EOF
-[greeter]
-background=/usr/share/backgrounds/default.png
-theme-name=Adwaita
-icon-theme-name=Adwaita
-font-name=Sans 11
-xft-antialias=true
-xft-hintstyle=hintslight
-indicators=~host;~spacer;~session;~language;~a11y;~clock;~power
-EOF
-
-# Create .xinitrc for ibrahim user (fallback if LightDM fails)
-cat > /home/ibrahim/.xinitrc << EOF
-#!/bin/bash
-exec enlightenment_start
-EOF
-chown ibrahim:ibrahim /home/ibrahim/.xinitrc
-chmod +x /home/ibrahim/.xinitrc
-
-# Create .xinitrc for root user as well
-cat > /root/.xinitrc << EOF
-#!/bin/bash
-exec enlightenment_start
-EOF
-chmod +x /root/.xinitrc
-
-# Fix potential /tmp permission issues
-chmod 1777 /tmp
-
-# Remove any stale Xauthority files
-rm -f /home/ibrahim/.Xauthority /root/.Xauthority
-
-# Enable LightDM service
-systemctl enable lightdm
+# ---------- DESKTOP DISPLAY MANAGER ----------
+pacman -S sddm plasma kde-applications firefox
+systemctl enable sddm
 
 # ============================================
 # PYTHON 3.12.7 INSTALLATION OPTIONS
