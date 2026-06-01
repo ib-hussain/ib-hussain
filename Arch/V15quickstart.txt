@@ -1,0 +1,99 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    IB GNOME RICE V15 — DOCK FIX                             ║
+║                           QUICK START GUIDE                                 ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+PROBLEM:
+  Dock is rectangular, not floating pill shape
+
+ROOT CAUSE:
+  V13/V14 CSS targeted full-width #panel instead of constrained #panel > StBoxLayout
+  Result: 100% width rectangular bar instead of 74% floating pill
+
+SOLUTION:
+  Target #panel > StBoxLayout (the actual constrained container)
+  Apply glass morphism per macOS Dock CSS specification
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DEPLOYMENT (3 STEPS):
+
+  1. Run the fix:
+     $ bash dock-v15-fix.sh
+
+  2. Log out and log back in:
+     Click power icon → Log out → Log back in
+     (Wayland requires full session restart)
+
+  3. Verify:
+     You should see a floating glass pill at the bottom-center of the screen
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+WHAT THE SCRIPT DOES:
+
+  ✓ Sets panel-lengths to 74 (constrain width to 74% screen)
+  ✓ Deletes ALL old CSS patches (prevents conflicts)
+  ✓ Writes ONE clean CSS block targeting #panel > StBoxLayout
+  ✓ Applies glass morphism per macOS Dock spec
+  ✓ Forces GNOME Shell extension reload
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+KEY CHANGES FROM V14:
+
+  BEFORE (V14):
+    margin-left: 13%; margin-right: 13%; on #panel (full-width wrapper)
+    → Didn't constrain because outer wrapper has no parent constraint
+
+  AFTER (V15):
+    CSS targets #panel > StBoxLayout (the constrained inner container)
+    → Respects panel-lengths: 74 setting
+    → Creates true floating pill
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+GLASS MORPHISM SPEC (macOS Dock):
+
+  background: rgba(255, 255, 255, 0.15)
+  backdrop-filter: blur(20px) saturate(180%)
+  border: 1px solid rgba(255, 255, 255, 0.3)
+  border-radius: 24px
+  box-shadow: (4-layer stack for depth)
+  margin-bottom: 12px (floating gap)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EXPECTED RESULT:
+
+  ✅ Single floating glass pill at bottom-center
+  ✅ Perfect 24px rounded corners (pill shape)
+  ✅ 12px gap from screen edge (floating effect)
+  ✅ Frosted glass appearance with blur
+  ✅ All icons + clock + tray in one unified bar
+  ✅ No icon bouncing on hover
+  ✅ 24h clock format (08:34 not 8:34 AM)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TROUBLESHOOTING:
+
+  If dock still looks wrong:
+    1. Check CSS was written: grep "IB_V15" /usr/share/gnome-shell/extensions/...
+    2. Verify extension enabled: gnome-extensions list --enabled | grep dash-to-panel
+    3. Force reload: disable + enable extensions, then log out/in
+    4. View detailed guide: DOCK_V15_FIX_GUIDE.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FILES INCLUDED:
+
+  dock-v15-fix.sh                — Main fix script (run this)
+  DOCK_V15_FIX_GUIDE.md         — Full technical explanation
+  V15_QUICK_START.txt           — This file
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+READY? Run: bash dock-v15-fix.sh
+
+Then log out and back in. You'll have a perfect floating glass pill dock! 🚀
