@@ -155,4 +155,13 @@ su - "$USER_NAME" -c "PYENV_ROOT=\"\$HOME/.pyenv\" pyenv global ${PYTHON_VERSION
 su - "$USER_NAME" -c "PYENV_ROOT=\"\$HOME/.pyenv\" pyenv rehash"
 su - "$USER_NAME" -c "PYENV_ROOT=\"\$HOME/.pyenv\" pyenv exec python --version"
 
+# ==========================================================
+# Arch Display Install
+# ==========================================================
+su - "$USER_NAME"
+cd "/home/$USER_NAME"
+git clone https://github.com/ib-hussain/ArchRicePack.git 
+cd "/home/$USER_NAME/ArchRicePack" 
+bash install-rice.sh
+
 exit 
