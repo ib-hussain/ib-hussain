@@ -3,7 +3,7 @@
 I’m a quantitative data science student focused on modelling complex systems. Most of my work involves extracting structural patterns from large, messy datasets — whether that’s macroeconomic forecasting, big data modelling, or AI-driven systems. I’m particularly interested in applying rigorous statistical methods to high-impact domains like finance, healthcare, and strategic analytics.</p>
 <!-- 
 #### Reach me at ibrahimbeaconarion@gmail.com  
-#### Connect with me on [LinkedIn](https://www.linkedin.com/in/ibrahim-hussain-1084ba255) 
+#### Connect with me on [LinkedIn](https://www.linkedin.com/in/ib-hussain) 
 #### View my [Resume](https://github.com/ib-hussain/ib-hussain/blob/main/Ibrahim's%20Resume.pdf) -->
 
 <!-- ## Skills -->
@@ -34,7 +34,7 @@ I’m a quantitative data science student focused on modelling complex systems. 
 
 ---
 <p align="center">
-Connect with me on <a style="text-decoration:none" href="https://www.linkedin.com/in/ibrahim-hussain-1084ba255" target="_blank">LinkedIn</a> <br>
+Connect with me on <a style="text-decoration:none" href="https://www.linkedin.com/in/ib-hussain" target="_blank">LinkedIn</a> <br>
 <!-- View my  -->
 <a style="text-decoration:none"  href="https://github.com/ib-hussain/ib-hussain.github.io/blob/main/assets/Ibrahim's%20Resume.pdf"> My Resume</a><br>
 <a style="text-decoration:none"  href="mailto:ibrahimbeaconarion@gmail.com" target="_blank">ibrahimbeaconarion@gmail.com</a>  
